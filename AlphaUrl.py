@@ -10,7 +10,7 @@ class Alpha_url:
 
     def get_intraday_data(self, ticker, interval, adjusted=True, extended_hours=True, month=None, outputsize='full', datatype='csv'):
         """ Get intraday data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_INTRADAY"
+        url = f"{self.base_url}TIME_SERIES_INTRADAY"
         
         params = {
             'symbol': ticker,
@@ -35,7 +35,7 @@ class Alpha_url:
 
     def get_daily_data(self, ticker, outputsize='full', datatype='csv'):
         """ Get daily data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_DAILY"
+        url = f"{self.base_url}TIME_SERIES_DAILY"
         
         params = {
             'symbol': ticker,
@@ -54,7 +54,7 @@ class Alpha_url:
 
     def get_daily_adjusted_data(self, ticker, outputsize='full', datatype='csv'):
         """ Get daily adjusted data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_DAILY_ADJUSTED"
+        url = f"{self.base_url}TIME_SERIES_DAILY_ADJUSTED"
         
         params = {
             'symbol': ticker,
@@ -73,7 +73,7 @@ class Alpha_url:
 
     def get_weekly_data(self, ticker, datatype='csv'):
         """ Get weekly data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_WEEKLY"
+        url = f"{self.base_url}TIME_SERIES_WEEKLY"
         
         params = {
             'symbol': ticker,
@@ -91,7 +91,7 @@ class Alpha_url:
 
     def get_weekly_adjusted_data(self, ticker, datatype='csv'):
         """ Get weekly adjusted data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_WEEKLY_ADJUSTED"
+        url = f"{self.base_url}TIME_SERIES_WEEKLY_ADJUSTED"
         
         params = {
             'symbol': ticker,
@@ -109,7 +109,7 @@ class Alpha_url:
 
     def get_monthly_data(self, ticker, datatype='csv'):
         """ Get monthly data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_MONTHLY"
+        url = f"{self.base_url}TIME_SERIES_MONTHLY"
         
         params = {
             'symbol': ticker,
@@ -127,7 +127,7 @@ class Alpha_url:
 
     def get_monthly_adjusted_data(self, ticker, datatype='csv'):
         """ Get monthly adjusted data for a given ticker """
-        url = f"{self.base_url}?function=TIME_SERIES_MONTHLY_ADJUSTED"
+        url = f"{self.base_url}TIME_SERIES_MONTHLY_ADJUSTED"
         
         params = {
             'symbol': ticker,
@@ -1932,7 +1932,7 @@ class Alpha_url:
             dict or str: The RSI data in JSON format (default) or CSV format.
         """
         # Constructing the URL
-        url = f'{self.base_url}function=RSI&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}RSI&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -1971,7 +1971,7 @@ class Alpha_url:
             dict or str: The STOCHRSI data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=STOCHRSI&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&fastkperiod={fastkperiod}&fastdperiod={fastdperiod}&fastdmatype={fastdmatype}&apikey={self.api_key}'
+        url = f'{self.base_url}STOCHRSI&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&fastkperiod={fastkperiod}&fastdperiod={fastdperiod}&fastdmatype={fastdmatype}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2006,7 +2006,7 @@ class Alpha_url:
             dict or str: The WILLR data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=WILLR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}WILLR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2041,7 +2041,7 @@ class Alpha_url:
             dict or str: The ADX data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=ADX&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}ADX&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2076,7 +2076,7 @@ class Alpha_url:
             dict or str: The ADXR data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=ADXR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}ADXR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2114,7 +2114,7 @@ class Alpha_url:
             dict or str: The APO data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=APO&symbol={ticker}&interval={interval}&series_type={series_type}&fastperiod={fastperiod}&slowperiod={slowperiod}&matype={matype}&apikey={self.api_key}'
+        url = f'{self.base_url}APO&symbol={ticker}&interval={interval}&series_type={series_type}&fastperiod={fastperiod}&slowperiod={slowperiod}&matype={matype}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2153,7 +2153,7 @@ class Alpha_url:
             dict or str: The PPO data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=PPO&symbol={ticker}&interval={interval}&series_type={series_type}&fastperiod={fastperiod}&slowperiod={slowperiod}&matype={matype}&apikey={self.api_key}'
+        url = f'{self.base_url}PPO&symbol={ticker}&interval={interval}&series_type={series_type}&fastperiod={fastperiod}&slowperiod={slowperiod}&matype={matype}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2189,7 +2189,7 @@ class Alpha_url:
             dict or str: The MOM data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=MOM&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}MOM&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2223,7 +2223,7 @@ class Alpha_url:
             dict or str: The BOP data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=BOP&symbol={ticker}&interval={interval}&apikey={self.api_key}'
+        url = f'{self.base_url}BOP&symbol={ticker}&interval={interval}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2258,7 +2258,7 @@ class Alpha_url:
             dict or str: The CCI data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=CCI&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}CCI&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2294,7 +2294,7 @@ class Alpha_url:
             dict or str: The CMO data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=CMO&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}CMO&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2330,7 +2330,7 @@ class Alpha_url:
             dict or str: The ROC data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=ROC&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}ROC&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2366,7 +2366,7 @@ class Alpha_url:
             dict or str: The ROCR data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=ROCR&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}ROCR&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2401,7 +2401,7 @@ class Alpha_url:
             dict or str: The Aroon data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=AROON&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}AROON&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2436,7 +2436,7 @@ class Alpha_url:
             dict or str: The Aroon Oscillator data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=AROONOSC&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}AROONOSC&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2471,7 +2471,7 @@ class Alpha_url:
             dict or str: The MFI data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=MFI&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}MFI&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2507,7 +2507,7 @@ class Alpha_url:
             dict or str: The TRIX data in JSON format (default) or CSV format.
         """
         # Construct the URL for the API request
-        url = f'{self.base_url}function=TRIX&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}TRIX&symbol={ticker}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}'
 
         # If the datatype is specified, add it to the URL
         if datatype:
@@ -2540,7 +2540,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=ULTOSC{ticker_param}&interval={interval}&timeperiod1={timeperiod1}&timeperiod2={timeperiod2}&timeperiod3={timeperiod3}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}ULTOSC{ticker_param}&interval={interval}&timeperiod1={timeperiod1}&timeperiod2={timeperiod2}&timeperiod3={timeperiod3}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2556,7 +2556,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=DX{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}DX{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2572,7 +2572,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=MINUS_DI{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}MINUS_DI{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2588,7 +2588,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=PLUS_DI{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}PLUS_DI{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2604,7 +2604,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=MINUS_DM{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}MINUS_DM{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2620,7 +2620,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=PLUS_DM{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}PLUS_DM{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2640,7 +2640,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=BBANDS{ticker_param}&interval={interval}&time_period={time_period}&series_type={series_type}&nbdevup={nbdevup}&nbdevdn={nbdevdn}&matype={matype}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}BBANDS{ticker_param}&interval={interval}&time_period={time_period}&series_type={series_type}&nbdevup={nbdevup}&nbdevdn={nbdevdn}&matype={matype}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2659,7 +2659,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=MIDPOINT{ticker_param}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}MIDPOINT{ticker_param}&interval={interval}&time_period={time_period}&series_type={series_type}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2677,7 +2677,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=MIDPRICE{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}MIDPRICE{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2696,7 +2696,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=SAR{ticker_param}&interval={interval}&acceleration={acceleration}&maximum={maximum}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}SAR{ticker_param}&interval={interval}&acceleration={acceleration}&maximum={maximum}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2713,7 +2713,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=TRANGE{ticker_param}&interval={interval}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}TRANGE{ticker_param}&interval={interval}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2731,7 +2731,7 @@ class Alpha_url:
         - datatype (str): The format of the returned data. Valid values are 'json' or 'csv'. Default is 'json'.
         """
         ticker_param = f'&symbol={ticker}'
-        url = f'{self.base_url}function=ATR{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
+        url = f'{self.base_url}ATR{ticker_param}&interval={interval}&time_period={time_period}&apikey={self.api_key}&datatype={datatype}'
         r = requests.get(url)
         data = r.json()
         print(data)
@@ -2750,7 +2750,7 @@ class Alpha_url:
         Example usage:
         api_handler.natr("AAPL")
         """
-        url = f'{self.base_url}query?function=NATR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
+        url = f'{self.base_url}NATR&symbol={ticker}&interval={interval}&time_period={time_period}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2772,7 +2772,7 @@ class Alpha_url:
         Example usage:
         api_handler.ad("AAPL")
         """
-        url = f'{self.base_url}query?function=AD&symbol={ticker}&interval={interval}&apikey={self.api_key}'
+        url = f'{self.base_url}AD&symbol={ticker}&interval={interval}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2796,7 +2796,7 @@ class Alpha_url:
         Example usage:
         api_handler.adosc("AAPL")
         """
-        url = f'{self.base_url}query?function=ADOSC&symbol={ticker}&interval={interval}&fastperiod={fastperiod}&slowperiod={slowperiod}&apikey={self.api_key}'
+        url = f'{self.base_url}ADOSC&symbol={ticker}&interval={interval}&fastperiod={fastperiod}&slowperiod={slowperiod}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2818,7 +2818,7 @@ class Alpha_url:
         Example usage:
         api_handler.obv("AAPL")
         """
-        url = f'{self.base_url}query?function=OBV&symbol={ticker}&interval={interval}&apikey={self.api_key}'
+        url = f'{self.base_url}OBV&symbol={ticker}&interval={interval}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2841,7 +2841,7 @@ class Alpha_url:
         Example usage:
         api_handler.ht_trendline("AAPL")
         """
-        url = f'{self.base_url}query?function=HT_TRENDLINE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_TRENDLINE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2864,7 +2864,7 @@ class Alpha_url:
         Example usage:
         api_handler.ht_sine("AAPL")
         """
-        url = f'{self.base_url}query?function=HT_SINE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_SINE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         if month:
             url += f'&month={month}'
         if datatype:
@@ -2875,28 +2875,28 @@ class Alpha_url:
 
     def ht_trendmode(self, ticker, interval='weekly', series_type='close'):
         """Get the HT_TRENDMODE for the specified ticker."""
-        url = f'{self.base_url}function=HT_TRENDMODE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_TRENDMODE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         r = requests.get(url)
         data = r.json()
         print(data)
 
     def ht_dcperiod(self, ticker, interval='daily', series_type='close'):
         """Get the HT_DCPERIOD for the specified ticker."""
-        url = f'{self.base_url}function=HT_DCPERIOD&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_DCPERIOD&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         r = requests.get(url)
         data = r.json()
         print(data)
 
     def ht_dcphase(self, ticker, interval='daily', series_type='close'):
         """Get the HT_DCPHASE for the specified ticker."""
-        url = f'{self.base_url}function=HT_DCPHASE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_DCPHASE&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         r = requests.get(url)
         data = r.json()
         print(data)
 
     def ht_phasor(self, ticker, interval='weekly', series_type='close'):
         """Get the HT_PHASOR for the specified ticker."""
-        url = f'{self.base_url}function=HT_PHASOR&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
+        url = f'{self.base_url}HT_PHASOR&symbol={ticker}&interval={interval}&series_type={series_type}&apikey={self.api_key}'
         r = requests.get(url)
         data = r.json()
         print(data)
